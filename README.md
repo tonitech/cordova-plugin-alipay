@@ -1,6 +1,6 @@
 # cordova-plugin-alipay
 ### 前言：
-支付宝的cordova插件其实在github上已经有很多了，但是都已经是以前的版本了。这个插件是基于 alipaySdk-20170710.jar 开发，加入了沙箱测试模式，大多数情况的报错都是，你的app没有上线，在服务端生产的orderinfo，客户端没有配置沙箱模式，请求的是正式支付宝导致，所以有了这个可以通过参数配置，指定连接正式支付宝还是沙箱环境。
+支付宝的cordova插件其实在github上已经有很多了，但是都已经是以前的版本了。这个插件是基于 alipaySdk-20180403.jar 开发，加入了沙箱测试模式，大多数情况的报错都是，你的app没有上线，在服务端生产的orderinfo，客户端没有配置沙箱模式，请求的是正式支付宝导致，所以有了这个可以通过参数配置，指定连接正式支付宝还是沙箱环境。
 ###### 本插件仅支持《APP支付》，不支持移动支付
 ***
 ### 功能说明
@@ -9,12 +9,14 @@
 
 ***
 ### 支持平台
-1. android （alipaySdk-20170710.jar）
+1. android （alipaySdk-20180403.jar）
 2. iOS
 
 ***
 ### 安装
-    cordova plugin add https://github.com/ejiyuan/cordova-plugin-alipay.git --variable APP_ID=[your AppId] --variable SANDBOX_MODE=[true] 
+    git clone https://github.com/tonitech/cordova-plugin-alipay.git
+    cd [your ionic project]
+    cordova plugin add [cordova-plugin-alipay path] --variable APP_ID=[your AppId] --variable SANDBOX_MODE=false
 ***
 ### 使用 API
     // 第一步：订单在服务端签名生成订单信息，具体请参考官网 https://docs.open.alipay.com/54/106370/ 进行签名处理
