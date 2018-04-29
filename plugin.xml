@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-plugin-alipay" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
     <name>alipay</name>
     <preference name="APP_ID"/>
     <preference name="SANDBOX_MODE"/>
@@ -12,33 +12,33 @@
             <feature name="alipay">
                 <param name="android-package" value="cn.meylink.alipay.alipay"/>
             </feature>
-            <preference name="APP_ID" value="$APP_ID" />
-            <preference name="SANDBOX_MODE" value="$SANDBOX_MODE" />
+            <preference name="APP_ID" value="$APP_ID"/>
+            <preference name="SANDBOX_MODE" value="$SANDBOX_MODE"/>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
-            <uses-permission android:name="android.permission.INTERNET" />
-            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <!-- alipay sdk begin -->
             <activity
-                android:name="com.alipay.sdk.app.H5PayActivity"
-                android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-                android:exported="false"
-                android:screenOrientation="behind"
-                android:windowSoftInputMode="adjustResize|stateHidden" >
+                    android:name="com.alipay.sdk.app.H5PayActivity"
+                    android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+                    android:exported="false"
+                    android:screenOrientation="behind"
+                    android:windowSoftInputMode="adjustResize|stateHidden">
             </activity>
             <!-- alipay sdk end -->
         </config-file>
         <source-file src="src/android/alipay.java" target-dir="src/cn/meylink/alipay"/>
         <source-file src="src/android/PayResult.java" target-dir="src/cn/meylink/alipay"/>
-        <source-file src="src/android/lib/alipaySdk-20180403.jar" target-dir="libs"/>
-        
+        <lib-file src="src/android/lib/alipaySdk-20180403.jar"/>
+
     </platform>
-    
+
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
             <feature name="alipay">
@@ -58,14 +58,14 @@
                 </dict>
             </array>
         </config-file>
-        
+
         <framework src="CoreTelephony.framework" weak="true"/>
         <framework src="Security.framework" weak="true"/>
         <framework src="SystemConfiguration.framework" weak="true"/>
         <framework src="CoreMotion.framework" weak="true"/>
         <framework src="CFNetwork.framework" weak="true"/>
         <framework src="libc++.tbd" weak="true"/>
-        
+
         <framework src="src/ios/lib/AlipaySDK.framework" custom="true"/>
         <resource-file src="src/ios/lib/AlipaySDK.bundle"/>
         <source-file src="src/ios/alipay.m"/>
